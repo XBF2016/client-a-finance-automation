@@ -1,0 +1,43 @@
+# Poetry / Virtual Environments
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*build/
+*dist/
+*.egg-info/
+*.spec
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Logs and Outputs
+logs/
+log/
+output/
+out/
+downloads/
+
+# IDE specific
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# Executables
+*.exe
+*.dll
+
+# MyPy
+.mypy_cache/
