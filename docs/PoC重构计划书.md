@@ -106,6 +106,11 @@ client-a-finance-automation/
   * 编写了单文件版 `main_poc.py` 脚本，实现登录、抓取、合并、导出功能
   * 创建了 `README_PoC.md` 使用说明文档
   * 创建了 `pyproject-poc.toml` 项目依赖文件
+* **2025-07-03**:
+  * 删除了原有的复杂框架代码，仅保留 PoC 所需的最小集合
+  * 移除了旧框架相关的目录与文件：`reusable_modules/`、`selector_tools.py`、`test_*.py` 等
+  * 清理了过时的框架文档和配置文件：`AUTO_SELECTOR_USAGE.md`、`MULTI_PLATFORM_ARCHITECTURE.md`等
+  * 调整项目结构为纯 PoC 结构，降低代码理解和使用门槛
 
 ---
 
