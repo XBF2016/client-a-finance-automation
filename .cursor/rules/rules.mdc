@@ -1,0 +1,9 @@
+---
+description:
+globs:
+alwaysApply: true
+---
+1. 永远要按照README 以及 docs 目录下的内容进行编码，不得擅长违反这些内容
+
+
+2. 所有描述性的文档，都要存放在 docs 下面，如果发现位置不对，你要提示我
