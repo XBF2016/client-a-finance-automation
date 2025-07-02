@@ -1,0 +1,44 @@
+urls:
+  taobao_homepage: "https://www.taobao.com"
+  taobao_login: "https://login.taobao.com"
+  jd_homepage: "https://www.jd.com"
+  jd_login: "https://passport.jd.com/new/login.aspx"
+
+selectors:
+  # 淘宝选择器
+  taobao_login_username: "#fm-login-id"
+  taobao_login_password: "#fm-login-password"
+  taobao_login_submit: "button[type='submit']"
+  taobao_login_success: ".site-nav-user"
+  taobao_orders_container: ".js-order-container"
+  taobao_order_id: ".order-num"
+  taobao_order_time: ".create-time"
+  taobao_buyer_name: ".buyer-name"
+
+  # 京东选择器
+  jd_login_username: "input[name='loginname']"
+  jd_login_password: "input[name='nloginpwd']"
+  jd_login_submit: "a[id='loginsubmit']"
+  jd_login_success: ".user-info"
+  jd_orders_container: ".order-item"
+  jd_order_id: ".number"
+  jd_order_time: ".deal-time"
+  jd_buyer_name: ".consignee"
+
+# 订单页面URL
+orders_urls:
+  taobao: "https://buyertrade.taobao.com/trade/itemlist/list_bought_items.htm"
+  jd: "https://order.jd.com/center/list.action"
+
+# 默认获取订单的天数
+default_days_to_fetch: 7
+
+# 浏览器设置
+browser_settings:
+  headless: false  # 非无头模式，便于演示和手动验证
+  slow_mo: 300     # 放慢操作速度，便于观察
+
+# 输出设置
+output:
+  folder: "poc/output"
+  filename: "合并订单_{timestamp}.xlsx"
