@@ -1,0 +1,101 @@
+urls:
+  taobao_homepage: "https://www.taobao.com"
+  taobao_login: "https://login.taobao.com"
+selectors:
+  taobao_logo: ".site-logo"
+  search_input: "#q"
+  search_button: ".btn-search"
+  login_button: ".site-nav-login"
+  username_input: "#fm-login-id"
+  password_input: "#fm-login-password"
+  login_submit_button: "#fm-login-submit"
+  qr_code_login: ".qrcode-login"
+  sms_login: ".sms-login"
+  remember_login: "#fm-login-remember"
+  password_login_tab: ".password-login"
+  login_error: ".login-error"
+  login_success_indicator: ".site-nav-user"
+paths:
+  screenshots_folder: "data/screenshots"
+  logs_folder: "logs"
+  output_folder: "data/output"
+# 默认获取订单的天数
+default_days_to_fetch: 7
+browser_settings:
+  debug: true  # 设置为true时启用调试模式，会设置非无头浏览器和缓慢执行
+  headless: false
+  slow_mo: 500
+  timeout: 30000
+  # 启用系统浏览器（如搜狗浏览器）
+  use_system_browser: true
+  # 浏览器类型 (chromium, firefox, webkit)
+  browser_type: "chromium"
+  # 可以直接指定浏览器路径（如果已知），留空则自动查找
+  browser_path: ""
+  # 启用用户数据保留，保存登录状态
+  enable_user_data: true
+  # 禁用匿名模式
+  disable_incognito: true
+  # 保存用户状态的目录名称
+  user_data_dir_name: "user_data_dir"
+business_rules:
+  page_load_timeout: 30
+  screenshot_on_success: true
+  wait_strategy: "domcontentloaded"
+auto_selector:
+  enabled: true
+  methods:
+    - smart_algorithm
+    - text_based
+    - attribute_based
+    - position_based
+  fallback_selectors: true
+  validation_timeout: 5
+  confidence_threshold: 0.8
+  max_candidates: 10
+  cache_enabled: true
+  cache_duration: 3600
+credentials:
+  # 这里不要硬编码敏感信息，这些值会被程序动态替换
+  username: ""
+  password: ""
+  jd_username: ""
+  jd_password: ""
+# 多平台配置
+platforms:
+  # 启用的平台列表
+  enabled:
+    - taobao
+    - jd
+  # 淘宝平台特定配置
+  taobao:
+    name: "淘宝"
+    homepage_url: "https://www.taobao.com"
+    login_url: "https://login.taobao.com"
+    orders_page_url: "https://buyertrade.taobao.com/trade/itemlist/list_bought_items.htm"
+    selectors:
+      login_success: ".site-nav-user"
+      orders_container: ".js-order-container"
+      order_id: ".order-num"
+      order_time: ".create-time"
+      buyer_name: ".buyer-name"
+    field_mappings:
+      buyer_name: "收件人姓名"
+      phone: "联系电话"
+      address: "收货地址"
+  # 京东平台特定配置
+  jd:
+    name: "京东"
+    homepage_url: "https://www.jd.com"
+    login_url: "https://passport.jd.com/new/login.aspx"
+    orders_page_url: "https://order.jd.com/center/list.action"
+    selectors:
+      login_success: ".user-info"
+      orders_container: ".order-item"
+      order_id: ".number"
+      order_time: ".deal-time"
+      buyer_name: ".consignee"
+    field_mappings:
+      buyer_name: "收件人姓名"
+      phone: "联系电话"
+      address: "收货地址"
